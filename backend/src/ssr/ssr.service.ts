@@ -7,8 +7,7 @@ import { createSSRApp } from 'vue';
 export class SsrService {
   private renderer;
 
-  constructor() {
-  }
+  constructor() {}
 
   async renderVueApp(data: any) {
     // Create the Vue App

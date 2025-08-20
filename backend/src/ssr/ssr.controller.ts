@@ -1,19 +1,19 @@
 import { Controller, Get } from '@nestjs/common';
 import { SsrService } from './ssr.service';
-import { MockService } from 'src/mock/mock.service';
+import { MockService } from '../mock/mock.service';
 
 @Controller('ssr')
 export class SsrController {
-    constructor(
-        private readonly ssrService: SsrService,
-        private readonly mockApiService: MockService,
-    ){}
+  constructor(
+    private readonly ssrService: SsrService,
+    private readonly mockApiService: MockService,
+  ) {}
 
-    @Get('*')
-    async handleSsr() {
+  @Get('*')
+  async handleSsr() {
     // Fetch the mock data
     const data = await this.mockApiService.getMockData();
-    
+
     // Render the Vue app with mock data
     const html = await this.ssrService.renderVueApp(data);
 
@@ -32,5 +32,5 @@ export class SsrController {
         </body>
       </html>
     `;
-    }
+  }
 }

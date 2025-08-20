@@ -11,7 +11,7 @@ import { MockService } from './mock/mock.service';
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: determineEnvFilePath(),
-    })
+    }),
   ],
   controllers: [AppController, SsrController],
   providers: [AppService, SsrService, MockService],

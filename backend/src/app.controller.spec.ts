@@ -14,9 +14,11 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('getMessage', () => {
+    it('should return "Hello from NestJS!"', () => {
+      expect(appController.getMessage()).toEqual({
+        message: 'Hello from NestJS!',
+      });
     });
   });
 });
